@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Web</title>
+    <style>
+        /* Estilos básicos para que se vea un poco mejor */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        .project-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .project-image img {
+            max-width: 250px; /* Tamaño máximo para la imagen */
+            height: auto;
+            border-radius: 4px;
+        }
+        .project-text {
+            flex-grow: 1;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>[Tu Nombre] - Portafolio</h1>
+            <p>Diseñador Web | Desarrollador Front-end | Artista Digital</p>
+            </div>
+    </header>
+
+    <section id="about" class="container">
+        <h2>👋 Hola, soy [Tu Nombre]</h2>
+        <p>Aquí va una breve introducción sobre ti, tus habilidades clave, tu experiencia y lo que te apasiona crear. Por ejemplo: "Soy un desarrollador con X años de experiencia creando soluciones web dinámicas y optimizadas. Me especializo en [Tecnología 1] y [Tecnología 2]."</p>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Mis Proyectos Destacados</h2>
+
+        <div class="project-item">
+            <div class="project-image">
+                <img src="ruta/a/imagen1.jpg" alt="Descripción del Proyecto 1">
+            </div>
+            <div class="project-text">
+                <h3>Nombre del Proyecto 1</h3>
+                <p>Breve descripción del proyecto. Explica el problema que resolviste, la tecnología que utilizaste (HTML, CSS, JavaScript, React, etc.) y tu rol. Intenta mantenerlo conciso y enfocado en el valor.</p>
+                <p><strong>Tecnologías usadas:</strong> HTML5, CSS3, JavaScript.</p>
+                <a href="enlace-al-proyecto-demo.html" target="_blank">Ver Demo</a> | <a href="enlace-al-repositorio-github" target="_blank">Ver Código</a>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-image">
+                <img src="ruta/a/imagen2.png" alt="Descripción del Proyecto 2">
+            </div>
+            <div class="project-text">
+                <h3>Nombre del Proyecto 2</h3>
+                <p>Descripción detallada de este segundo proyecto. Menciona cualquier reto técnico o diseño innovador que lograste implementar. Este es un buen lugar para mostrar tu mejor trabajo.</p>
+                <p><strong>Tecnologías usadas:</strong> Python, Django, PostgreSQL.</p>
+                <a href="enlace-al-proyecto-demo-2.html" target="_blank">Ver Demo</a> | <a href="enlace-al-repositorio-github-2" target="_blank">Ver Código</a>
+            </div>
+        </div>
+
+        </section>
+
+    <footer>
+        <div class="container">
+            <p>Contacto: [tu-email@ejemplo.com] | © 2024 [Tu Nombre]</p>
+            </div>
+    </footer>
+
+</body>
+</html>
