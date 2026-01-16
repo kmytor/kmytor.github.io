@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite A-Frame Three.js App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Critical Preloader CSS */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    #app {
+      opacity: 0;
+      transition: opacity 1s ease;
+      visibility: hidden;
+    }
+
+    #app.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/main-75e7ae57.js"></script>
+  <link rel="stylesheet" href="/assets/index-8eca8ac7.css">
+</head>
+
+<body>
+  <div id="preloader">
+    <div class="loader-content">
+      <img src="/chaman/marco.png" alt="Loading..." id="loader-gif">
+      <div id="loader-percentage">0%</div>
+      <div class="loader-bar-container">
+        <div id="loader-bar"></div>
+      </div>
+    </div>
+  </div>
+  <div id="bg-layer-1" class="bg-layer active"></div>
+  <div id="bg-layer-2" class="bg-layer"></div>
+  <div id="app">
+    <div id="info-window" class="info-window">
+      <iframe id="info-iframe" src="about:blank" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div class="bg-text-container">
+      <div id="bg-text-m1" class="bg-text">WEB</div>
+      <div id="bg-text-m2" class="bg-text">3D</div>
+      <div id="bg-text-m3" class="bg-text">VIDEO</div>
+    </div>
+
+    <div class="personal-brand">
+      <div class="brand-icons">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+          <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+          <path d="M2 2l7.586 7.586"></path>
+          <circle cx="11" cy="11" r="2"></circle>
+        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="name">Camilo Torres</span>
+        <span class="title">Diseñador Multimedia</span>
+      </div>
+    </div>
+
+    <div class="marco">
+      <img src="/chaman/marco.png" alt="">
+    </div>
+
+    <!-- Menu for Water (m1) -->
+    <div id="menu-m1" class="hover-menu" data-menu="m1">
+      <h1>Diseño UI / UX</h1>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <a href="https://www.behance.net/gallery/239930135/Skandia-Marketing" target="_blank"
+            rel="noopener noreferrer" class="menu-link">
+            <img
+              src="https://mir-s3-cdn-cf.behance.net/projects/404_webp/4ae7f6239930135.Y3JvcCwxMjc4LDEwMDAsNTYsMA.png"
+              alt="Skandia México" class="menu-icon">
+            <div class="menu-content">
+              <h3>Skandia México</h3>
+            </div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="https://www.behance.net/gallery/107134231/photograper" target="_blank" rel="noopener noreferrer"
+            class="menu-link">
+            <img
+              src="https://mir-s3-cdn-cf.behance.net/projects/404_webp/27eeb2107134231.Y3JvcCwxMTIzLDg3OCwxNTUsMA.png"
+              alt="Photograper" class="menu-icon">
+            <div class="menu-content">
+              <h3>Photograper</h3>
+            </div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="https://www.behance.net/gallery/75132751/Especial-Aves" target="_blank" rel="noopener noreferrer"
+            class="menu-link">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/522c0275132751.5c448ba1409f4.jpg"
+              alt="Aves de Colombia" class="menu-icon">
+            <div class="menu-content">
+              <h3>Aves de Colombia</h3>
+            </div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="https://www.behance.net/gallery/241612511/Conecta-espacios" target="_blank" rel="noopener noreferrer"
+            class="menu-link">
+            <img
+              src="https://mir-s3-cdn-cf.behance.net/projects/808_webp/3ea2e4241612511.Y3JvcCwxMzY2LDEwNjgsMCwyOTI0.png"
+              alt="Vida" class="menu-icon">
+            <div class="menu-content">
+              <h3>Conecta Espacios</h3>
+            </div>
+          </a>
+        </li>
+        <li class="menu-item in-construction">
+          <div class="menu-link">
+            <img src="/chaman/enconstruccion.png" alt="En construcción" class="menu-icon">
+            <div class="menu-content">
+              <h3>Proyecto en curso</h3>
+              <p>Próximamente...</p>
+            </div>
+          </div>
+        <li class="menu-item in-construction">
+          <div class="menu-link">
+            <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
+            <div class="menu-content">
+              <h3>Diseño de App</h3>
+              <p>Próximamente...</p>
+            </div>
+          </div>
+        </li>
+        <li class="menu-item in-construction">
+          <div class="menu-link">
+            <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
+            <div class="menu-content">
+              <h3>Plataforma E-com</h3>
+              <p>En desarrollo...</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Menu for Earth (m2) -->
+    <div id="menu-m2" class="hover-menu" data-menu="m2">
+      <h1>Diseño 3D</h1>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <a href="https://www.behance.net/gallery/241669311/Bayer-alka-seltzer" class="menu-link">
+            <img src="https://mir-s3-cdn-cf.behance.net/projects/404/bc0baf241669311.Y3JvcCwxMDE5LDc5Nyw5MCwzMzM.png"
+              alt="Tierra" class="menu-icon">
+            <div class="menu-content">
+              <h3>alka-seltzer</h3>
+            </div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="https://www.behance.net/gallery/241672297/Acid-Mantle-bayer" class="menu-link">
+            <img src="https://mir-s3-cdn-cf.behance.net/projects/404/0ed1e6241672297.Y3JvcCwxMDU0LDgyNSwxOTAsMA.png"
+              alt="Solidez" class="menu-icon">
+            <div class="menu-content">
+              <h3>Acid-Mantle</h3>
+            </div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="https://www.behance.net/gallery/241686651/bayer-mexana" class="menu-link">
+            <img src="https://mir-s3-cdn-cf.behance.net/projects/404/ea4ad2241686651.Y3JvcCwxMTIzLDg3OSwxNjEsMA.png"
+              alt="Crecimiento" class="menu-icon">
+            <div class="menu-content">
+              <h3>Mexana</h3>
+            </div>
+          </a>
+        </li>
+        <li class="menu-item in-construction">
+          <div class="menu-link">
+            <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
+            <div class="menu-content">
+              <h3>Modelado Orgánico</h3>
+              <p>Próximamente...</p>
+            </div>
+          </div>
+        </li>
+        <li class="menu-item in-construction">
+          <div class="menu-link">
+            <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
+            <div class="menu-content">
+              <h3>Entorno VR</h3>
+              <p>En modelado...</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="construction-msg">
+        Sección en construcción
+      </div>
+    </div>
+
+    <!-- Menu for Fire (m3) -->
+    <div id="menu-m3" class="hover-menu" data-menu="m3">
+      <h1>Video y Animación</h1>
+      <ul class="menu-list">
+        <li class="menu-item in-construction">
+          <div class="menu-link">
+            <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
+            <div class="menu-content">
+              <h3>Nueva Producción</h3>
+              <p>En edición...</p>
+            </div>
+          </div>
+        </li>
+        <li class="menu-item in-construction">
+          <div class="menu-link">
+            <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
+            <div class="menu-content">
+              <h3>Motion Reel</h3>
+              <p>Próximamente...</p>
+            </div>
+          </div>
+        </li>
+        <li class="menu-item in-construction">
+          <div class="menu-link">
+            <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
+            <div class="menu-content">
+              <h3>VFX Breakdown</h3>
+              <p>En proceso...</p>
+            </div>
+          </div>
+        </li>
+        <li class="menu-item in-construction">
+          <div class="menu-link">
+            <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
+            <div class="menu-content">
+              <h3>Storytelling</h3>
+              <p>En pre-producción...</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="construction-msg">
+        Sección en construcción
+      </div>
+    </div>
+
+    <a-scene control-animacion-cursor="target: #chaman-entity;" shadow="type: pcfsoft"
+      fog="type: exponential; color: #0a0023; near: 0.1; far: 0.1; density: 0.2" vr-mode-ui="enabled: false">
+      <a-assets>
+        <a-asset-item id="chaman" src="/chaman/Chaman-flat.gltf"></a-asset-item>
+        <a-asset-item id="fuego" src="/chaman/fuego.glb"></a-asset-item>
+        <a-asset-item id="agua" src="/chaman/water.glb"></a-asset-item>
+        <a-asset-item id="roca" src="/chaman/stone2.glb"></a-asset-item>
+
+        <!-- Videos para texturas -->
+        <video id="videoAgua" src="/assets/Agua_1-b6ce35a6.mp4" autoplay muted loop playsinline style="display:none"></video>
+        <video id="videoFuego" src="/assets/Fuego-mapa-ae270f71.mp4" autoplay muted loop playsinline
+          style="display:none"></video>
+
+        <!-- Imágenes para los planos de texto -->
+        <img id="imgAgua" src="/chaman/water.png" crossorigin="anonymous">
+        <img id="imgRoca" src="/chaman/Earth.png" crossorigin="anonymous">
+        <img id="imgFuego" src="/chaman/Fire.png" crossorigin="anonymous">
+        <img id="miImagenDerecha" src="/chaman/hojas.png" crossorigin="anonymous">
+      </a-assets>
+
+
+      <!-- Cámara: cursor + raycaster limitado a .clickable -->
+      <a-entity camera="fov: 75" position="0 0.5 -2" rotation="20 0 0" cursor="rayOrigin: mouse"
+        raycaster="objects: .clickable; far: 10;" responsive-camera="baseFov: 75; minFov: 60; maxFov: 90">
+      </a-entity>
+
+      <!-- Luces -->
+      <a-entity light="color: #ffffff; intensity: 0.009; type: ambient" position="-0.50666 1.7079 -1.11549"></a-entity>
+
+      <a-entity>
+        <a-entity id="chaman-entity" gltf-model="#chaman" rotation="20 0 0" position="0 0 -4.2" scale="2 2 2"
+          animation-mixer log-modelo-cargado log-animaciones debug-animation-ticker inspect-textures
+          shadow="cast: true; receive: true" fix-shadow-artifacts>
+        </a-entity>
+      </a-entity>
+
+      <!-- Contenedor para los modelos y sus luces -->
+      <a-entity position="0 0.6 -3">
+        <a-entity id="m1" class="clickable model" gltf-model="#agua" position="-0.5 -0.1 0" scale="0.1 0.1 0.1"
+          rotation="0 90 0" animation-mixer="clip: aguita; loop: repeat" rotar-al-pasar="escala: 1.5 1.5 1.5"
+          info-trigger="type: web; pos: left" log-modelo-cargado
+          textura-video="video: #videoAgua; threshold: 0.2; smoothness: 0.8" log-animaciones glow-on-hover
+          shadow="cast: true; receive: true"
+          animation="property: rotation; to: 0 450 0; loop: true; dur: 10000; easing: linear">
+        </a-entity>
+
+        <a-entity id="m2" class="clickable model" gltf-model="#roca" position="0 -0.1 0" scale="0.1 0.1 0.1"
+          rotation="0 90 0" animation-mixer="clip: roket; loop: repeat" rotar-al-pasar="escala: 1.5 1.5 1.5"
+          info-trigger="type: 3d; pos: top left" log-modelo-cargado log-animaciones glow-on-hover
+          shadow="cast: true; receive: true"
+          animation="property: rotation; to: 0 450 0; loop: true; dur: 10000; easing: linear">
+        </a-entity>
+
+
+        <a-entity id="m3" class="clickable model" gltf-model="#fuego" position="0.5 -0.1 0" scale="0.1 0.1 0.1"
+          rotation="0 90 0" animation-mixer="clip: firex; loop: repeat" rotar-al-pasar="escala: 1 0.6 1"
+          info-trigger="type: video" log-modelo-cargado
+          textura-video="video: #videoFuego; threshold: 0.3; smoothness: 0.7; rotation: 180" log-animaciones
+          glow-on-hover video-hover-effects="hoverColor: #FF2B00; baseColor: #ffffff; speed: 3"
+          shadow="cast: true; receive: true"
+          animation="property: rotation; to: 0 450 0; loop: true; dur: 10000; easing: linear">
+        </a-entity>
+
+        <!-- Planos para imágenes debajo de cada modelo -->
+        <a-plane id="imagen-m1" position="-0.5 -0.25 0" rotation="20 0 0" width="0.3" height="0.1"
+          material="src: #imgAgua; shader: flat; transparent: true; opacity: 1">
+        </a-plane>
+
+        <a-plane id="imagen-m2" position="0 -0.25 0" rotation="15 0 0" width="0.3" height="0.1"
+          material="src: #imgRoca; shader: flat; transparent: true; opacity: 1">
+        </a-plane>
+
+        <a-plane id="imagen-m3" position="0.5 -0.25 0" rotation="15 0 0" width="0.3" height="0.1"
+          material="src: #imgFuego; shader: flat; transparent: true; opacity: 1">
+        </a-plane>
+
+        <a-plane position="-2 1 -0.5" width="1" height="1"
+          material="side: double; transparent: true; src: #miImagenDerecha; shader: standard" rotation="10 0 0"
+          scale="2 3 1"></a-plane>
+        <a-plane position="1.8 -0.2 -0.5" width="1" height="1"
+          material="side: double; transparent: true; src: #miImagenDerecha; shader: standard" rotation="-10 180 10"
+          scale="2 3 1"></a-plane>
+
+        <!-- Luces para iluminar las imágenes de hojas -->
+        <a-entity light="type: point; color: #ffffff; intensity: 0.1; distance: 2; decay: 2"
+          position="-2 1 0.5"></a-entity>
+        <a-entity light="type: point; color: #ffffff; intensity: 0.1; distance: 2; decay: 2"
+          position="1.8 -0.8 0.5"></a-entity>
+
+
+
+        <!-- Luces para los modelos de fuego -->
+        <a-entity id="luz-m1"
+          light="type: spot; color: #00C3FF; intensity: 0; distance: 4; decay: 1; angle: 40; penumbra: 0.5; castShadow: true"
+          position="-0.5 0.1 0" rotation=" 40 0 0" scale="1 1 1"
+          animation__fadein="property: light.intensity; to: 2; startEvents: fade-in; dur: 200; easing: easeInOutQuad"
+          animation__fadeout="property: light.intensity; to: 0; startEvents: fade-out; dur: 300; easing: easeInQuad"
+          light-noise-distortion="intensityMin: 2; intensityMax: 20; intensitySpeed: 1; posRange: 0.5 0.5 0.03; posSpeed: 1"
+          spotlight-map="src: /chaman/agua.jpg">
+        </a-entity>
+
+        <!-- m2 -->
+
+        <a-entity id="luz-m2"
+          light="type: spot; color: #C7B791; intensity: 0; distance: 4; decay: 1; angle: 30; penumbra: 0.5; castShadow: true"
+          position="0 0.2 0" rotation=" 40 0 0"
+          animation__fadein="property: light.intensity; to: 1.5; startEvents: fade-in; dur: 300; easing: easeOutQuad"
+          animation__fadeout="property: light.intensity; to: 0; startEvents: fade-out; dur: 300; easing: easeInQuad"
+          light-noise-distortion="intensityMin: 1.5; intensityMax: 3; intensitySpeed: 1; posRange: 0.2 0. 0.03; posSpeed: 1">
+        </a-entity>
+
+
+        <!-- m3 -->
+        <a-entity id="luz-m3"
+          light="type: spot; color: #ffffff; intensity: 0; distance: 4; decay: 1; angle: 40; penumbra: 0.5; castShadow: true"
+          position="0.5 0.2 0" rotation=" 40 14 0"
+          animation__fadein="property: light.intensity; to: 2; startEvents: fade-in; dur: 200; easing: easeOutQuad"
+          animation__fadeout="property: light.intensity; to: 0; startEvents: fade-out; dur: 300; easing: easeInQuad"
+          light-noise-distortion="intensityMin: 0.4; intensityMax: 3; intensitySpeed: 4; posRange: 0 -0.1 0.1; posSpeed: 4"
+          spotlight-map="src: /chaman/fuego.png">
+
+
+        </a-entity>
+
+
+        <a-entity light="color: #660055; intensity: 5" position="5.06838 5.32641 -9.52613"></a-entity>
+        <a-entity light="color: #007bff; intensity: 5" position="-10.17311 7.43593 -16.00178"></a-entity>
+        <a-entity light="angle: 30; distance: 2.5; intensity: 0.1; penumbra: 1; type: spot"
+          position="-0.30779 2.08118 0.69042"></a-entity>
+
+
+      </a-entity>
+    </a-scene>
+  </div>
+
+  
+</body>
+
+</html>
