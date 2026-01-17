@@ -38,8 +38,8 @@
       visibility: visible;
     }
   </style>
-  <script type="module" crossorigin src="/assets/main-d55b10a0.js"></script>
-  <link rel="stylesheet" href="/assets/index-a6d83566.css">
+  <script type="module" crossorigin src="/assets/main-fe9c2a26.js"></script>
+  <link rel="stylesheet" href="/assets/index-16d0de43.css">
 </head>
 
 <body>
@@ -90,18 +90,15 @@
 
     <div class="personal-brand">
       <div class="brand-icons">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-          <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-          <path d="M2 2l7.586 7.586"></path>
-          <circle cx="11" cy="11" r="2"></circle>
-        </svg>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-          stroke-linejoin="round">
-          <polyline points="16 18 22 12 16 6"></polyline>
-          <polyline points="8 6 2 12 8 18"></polyline>
-        </svg>
+        <a href="https://www.linkedin.com/in/kmytor/" target="_blank" class="linkedin-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          <span>Conoce más de mi perfil</span>
+        </a>
       </div>
       <div class="brand-text">
         <span class="name">Camilo Torres</span>
@@ -291,7 +288,8 @@
     </div>
 
     <a-scene control-animacion-cursor="target: #chaman-entity;" shadow="type: pcfsoft"
-      fog="type: exponential; color: #0a0023; near: 0.1; far: 0.1; density: 0.2" vr-mode-ui="enabled: false">
+      fog="type: exponential; color: #0a0023; near: 0.1; far: 0.1; density: 0.2" vr-mode-ui="enabled: false"
+      post-processing-effects="bloomStrength: 1.2; noiseIntensity: 0.04" log-post-processing>
       <a-assets>
         <a-asset-item id="chaman" src="/chaman/Chaman-flat.gltf"></a-asset-item>
         <a-asset-item id="fuego" src="/chaman/fuego.glb"></a-asset-item>
@@ -332,14 +330,14 @@
           rotation="0 90 0" animation-mixer="clip: aguita; loop: repeat" rotar-al-pasar="escala: 1.5 1.5 1.5"
           info-trigger="type: web; pos: left" log-modelo-cargado
           textura-video="video: #videoAgua; threshold: 0.2; smoothness: 0.8" log-animaciones glow-on-hover
-          shadow="cast: true; receive: true"
+          shadow="cast: true; receive: true" bloom
           animation="property: rotation; to: 0 450 0; loop: true; dur: 10000; easing: linear">
         </a-entity>
 
         <a-entity id="m2" class="clickable model" gltf-model="#roca" position="0 -0.1 0" scale="0.1 0.1 0.1"
           rotation="0 90 0" animation-mixer="clip: roket; loop: repeat" rotar-al-pasar="escala: 1.5 1.5 1.5"
           info-trigger="type: 3d; pos: top left" log-modelo-cargado log-animaciones glow-on-hover
-          shadow="cast: true; receive: true"
+          shadow="cast: true; receive: true" bloom
           animation="property: rotation; to: 0 450 0; loop: true; dur: 10000; easing: linear">
         </a-entity>
 
@@ -349,7 +347,7 @@
           info-trigger="type: video" log-modelo-cargado
           textura-video="video: #videoFuego; threshold: 0.3; smoothness: 0.7; rotation: 180" log-animaciones
           glow-on-hover video-hover-effects="hoverColor: #FF2B00; baseColor: #ffffff; speed: 3"
-          shadow="cast: true; receive: true"
+          shadow="cast: true; receive: true" bloom
           animation="property: rotation; to: 0 450 0; loop: true; dur: 10000; easing: linear">
         </a-entity>
 
