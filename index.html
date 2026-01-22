@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Camilo Torres Multimedia Designer</title>
+  <title data-i18n="title">Camilo Torres Multimedia Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;700&display=swap"
@@ -39,8 +39,9 @@
       visibility: visible;
     }
   </style>
-  <script type="module" crossorigin src="/assets/main-445df70e.js"></script>
-  <link rel="stylesheet" href="/assets/index-16d0de43.css">
+  <script type="module" crossorigin src="/assets/main-7b9c0fca.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/translations-bec1d374.js">
+  <link rel="stylesheet" href="/assets/index-eee3f4fc.css">
 </head>
 
 <body>
@@ -55,8 +56,8 @@
           <circle cx="11" cy="11" r="2"></circle>
         </svg>
       </div>
-      <h2>Unsupported Resolution</h2>
-      <p>This experience is designed exclusively for desktop resolutions.</p>
+      <h2 data-i18n="mobileTitle">Unsupported Resolution</h2>
+      <p data-i18n="mobileText">This experience is designed exclusively for desktop resolutions.</p>
       <div class="desktop-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
           stroke-linejoin="round">
@@ -65,7 +66,7 @@
           <line x1="12" y1="17" x2="12" y2="21"></line>
         </svg>
       </div>
-      <p class="small">Please access from a device with a screen width of at least 768px.</p>
+      <p class="small" data-i18n="mobileSmall">Please access from a device with a screen width of at least 768px.</p>
     </div>
   </div>
   <div id="preloader">
@@ -98,13 +99,14 @@
             <rect x="2" y="9" width="4" height="12"></rect>
             <circle cx="4" cy="4" r="2"></circle>
           </svg>
-          <span>Learn more about my profile</span>
+          <span data-i18n="profileLink">Learn more about my profile</span>
         </a>
       </div>
       <div class="brand-text">
-        <span class="name">Camilo Torres</span>
-        <span class="title">Multimedia Designer</span>
+        <span class="name" data-i18n="profileName">Camilo Torres</span>
+        <span class="title" data-i18n="profileTitle">Multimedia Designer</span>
       </div>
+      <button id="lang-toggle" class="lang-btn">ES</button>
     </div>
 
     <div class="marco">
@@ -113,7 +115,7 @@
 
     <!-- Menu for Water (m1) -->
     <div id="menu-m1" class="hover-menu" data-menu="m1">
-      <h1>UI / UX Design</h1>
+      <h1 data-i18n="menuM1Title">UI / UX Design</h1>
       <ul class="menu-list">
         <li class="menu-item">
           <a href="https://www.behance.net/gallery/239930135/Skandia-Marketing" target="_blank"
@@ -162,16 +164,16 @@
           <div class="menu-link">
             <img src="/chaman/enconstruccion.png" alt="En construcción" class="menu-icon">
             <div class="menu-content">
-              <h3>Project in progress</h3>
-              <p>Coming soon...</p>
+              <h3 data-i18n="inProgress">Project in progress</h3>
+              <p data-i18n="comingSoon">Coming soon...</p>
             </div>
           </div>
         <li class="menu-item in-construction">
           <div class="menu-link">
             <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
             <div class="menu-content">
-              <h3>App Design</h3>
-              <p>Coming soon...</p>
+              <h3 data-i18n="appDesign">App Design</h3>
+              <p data-i18n="comingSoon">Coming soon...</p>
             </div>
           </div>
         </li>
@@ -179,8 +181,8 @@
           <div class="menu-link">
             <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
             <div class="menu-content">
-              <h3>E-com Platform</h3>
-              <p>In development...</p>
+              <h3 data-i18n="ecomPlatform">E-com Platform</h3>
+              <p data-i18n="inDevelopment">In development...</p>
             </div>
           </div>
         </li>
@@ -189,7 +191,7 @@
 
     <!-- Menu for Earth (m2) -->
     <div id="menu-m2" class="hover-menu" data-menu="m2">
-      <h1>3D Design</h1>
+      <h1 data-i18n="menuM2Title">3D Design</h1>
       <ul class="menu-list">
         <li class="menu-item">
           <a href="https://www.behance.net/gallery/241669311/Bayer-alka-seltzer" class="menu-link">
@@ -222,8 +224,8 @@
           <div class="menu-link">
             <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
             <div class="menu-content">
-              <h3>Organic Modeling</h3>
-              <p>Coming soon...</p>
+              <h3 data-i18n="organicModeling">Organic Modeling</h3>
+              <p data-i18n="comingSoon">Coming soon...</p>
             </div>
           </div>
         </li>
@@ -231,27 +233,27 @@
           <div class="menu-link">
             <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
             <div class="menu-content">
-              <h3>VR Environment</h3>
-              <p>In modeling...</p>
+              <h3 data-i18n="vrEnvironment">VR Environment</h3>
+              <p data-i18n="inModeling">In modeling...</p>
             </div>
           </div>
         </li>
       </ul>
-      <div class="construction-msg">
+      <div class="construction-msg" data-i18n="underConstruction">
         Section under construction
       </div>
     </div>
 
     <!-- Menu for Fire (m3) -->
     <div id="menu-m3" class="hover-menu" data-menu="m3">
-      <h1>Video and Animation</h1>
+      <h1 data-i18n="menuM3Title">Video and Animation</h1>
       <ul class="menu-list">
         <li class="menu-item in-construction">
           <div class="menu-link">
             <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
             <div class="menu-content">
-              <h3>New Production</h3>
-              <p>In editing...</p>
+              <h3 data-i18n="newProduction">New Production</h3>
+              <p data-i18n="inEditing">In editing...</p>
             </div>
           </div>
         </li>
@@ -259,8 +261,8 @@
           <div class="menu-link">
             <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
             <div class="menu-content">
-              <h3>Motion Reel</h3>
-              <p>Coming soon...</p>
+              <h3 data-i18n="motionReel">Motion Reel</h3>
+              <p data-i18n="comingSoon">Coming soon...</p>
             </div>
           </div>
         </li>
@@ -268,8 +270,8 @@
           <div class="menu-link">
             <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
             <div class="menu-content">
-              <h3>VFX Breakdown</h3>
-              <p>In process...</p>
+              <h3 data-i18n="vfxBreakdown">VFX Breakdown</h3>
+              <p data-i18n="inProcess">In process...</p>
             </div>
           </div>
         </li>
@@ -277,13 +279,13 @@
           <div class="menu-link">
             <img src="/chaman/enconstruccion.png" alt="Proyecto en curso" class="menu-icon">
             <div class="menu-content">
-              <h3>Storytelling</h3>
-              <p>In pre-production...</p>
+              <h3 data-i18n="storytelling">Storytelling</h3>
+              <p data-i18n="inPreProduction">In pre-production...</p>
             </div>
           </div>
         </li>
       </ul>
-      <div class="construction-msg">
+      <div class="construction-msg" data-i18n="underConstruction">
         Section under construction
       </div>
     </div>
