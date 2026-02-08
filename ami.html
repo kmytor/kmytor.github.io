@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scene - GLB</title>
+    
+    
+  <script type="module" crossorigin src="/assets/translations-bec1d374.js"></script>
+  <script type="module" crossorigin src="/assets/main-85c0cad2.js"></script>
+  <link rel="stylesheet" href="/assets/main-eee3f4fc.css">
+</head>
+
+<body>
+    <a-scene embedded shadow="type:pcfsoft" background="color: #111827">
+        <a-assets>
+            <!-- Coloca tu modelo en public/models/model.glb -->
+            <a-asset-item id="myModel" src="/models/model.glb"></a-asset-item>
+        </a-assets>
+
+        <!-- Luz para el modelo -->
+        <a-entity light="type:ambient; intensity:0.6"></a-entity>
+        <a-entity light="type:directional; intensity:1; castShadow:true" position="2 4 1"></a-entity>
+
+        <!-- Modelo GLB -->
+        <a-entity gltf-model="#myModel" position="0 0 -2" rotation="0 180 0" scale="1 1 1"
+            shadow="cast: true; receive: true">
+        </a-entity>
+
+        <!-- Suelo simple para recibir sombras -->
+        <a-plane rotation="-90 0 0" width="10" height="10" color="#0F172A" material="metalness:0; roughness:1"
+            shadow="receive: true"></a-plane>
+
+        <!-- Cámara -->
+        <a-entity position="0 1.6 3">
+            <a-entity camera look-controls></a-entity>
+        </a-entity>
+    </a-scene>
+
+    
+</body>
+
+</html>
