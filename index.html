@@ -40,8 +40,8 @@
     }
   </style>
   <script type="module" crossorigin src="/assets/translations-bec1d374.js"></script>
-  <script type="module" crossorigin src="/assets/main-85c0cad2.js"></script>
-  <link rel="stylesheet" href="/assets/main-eee3f4fc.css">
+  <script type="module" crossorigin src="/assets/main-14ee195b.js"></script>
+  <link rel="stylesheet" href="/assets/main-1dd6618d.css">
 </head>
 
 <body>
@@ -91,22 +91,44 @@
     </div>
 
     <div class="personal-brand">
-      <div class="brand-icons">
-        <a href="https://www.linkedin.com/in/kmytor/" target="_blank" class="linkedin-btn">
+      <div class="brand-visual">
+        <div class="avatar-container">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
+            stroke-linejoin="round" class="avatar-icon">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
           </svg>
-          <span data-i18n="profileLink">Learn more about my profile</span>
-        </a>
+          <div class="status-indicator"></div>
+        </div>
       </div>
-      <div class="brand-text">
-        <span class="name" data-i18n="profileName">Camilo Torres</span>
-        <span class="title" data-i18n="profileTitle">Multimedia Designer</span>
+      <div class="brand-content">
+        <div class="brand-header">
+          <span class="name" data-i18n="profileName">Camilo Torres</span>
+          <span class="title" data-i18n="profileTitle">Multimedia Designer</span>
+        </div>
+        <div class="brand-actions">
+          <a href="https://www.linkedin.com/in/kmytor/" target="_blank" class="action-btn linkedin" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="https://kmytor.github.io/cv/" target="_blank" class="action-btn cv" title="Curriculum Digital">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <line x1="10" y1="9" x2="8" y2="9"></line>
+            </svg>
+            <span class="btn-label" data-i18n="cvLink">CV</span>
+          </a>
+          <button id="lang-toggle" class="lang-btn">ES</button>
+        </div>
       </div>
-      <button id="lang-toggle" class="lang-btn">ES</button>
     </div>
 
     <div class="marco">
